@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">    
+  <title>Space tourism website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700;800&family=Bellefair&display=swap" rel="stylesheet">
+  <style>
+     body{background-image: url(assets/home/background-home-mobile.jpg);background-repeat: no-repeat;background-size: cover;}
+    .header{display: flex;color: var(--color-primary);align-items: center;padding: 24px 0;justify-content: space-between;position: relative;}
+    .header-logoimg{width: 30%;}
+    .header-nav{width: 15%;backdrop-filter: blur(80px); background-color: transparent;transition: .4s ease-in;}
+    .close-icon{display: none;}
+    .hn-item{font-family: var(--font-family-accent);letter-spacing: 2px;font-size: 16px;display: block;margin-bottom: 32px;}
+    .header-logo--des{display: none;}
+    .hn-items{display: none;}
+    .header-nav.active .hn-items{display: block;}
+    .header-nav.active{width: 70%;background: rgb(11 13 23 / 0%); height: 100vh; position: fixed; top: 0; right: 0;padding: 32px;transition: .4s ease-in;}
+    .header-nav.active .hamburger-menu{display: none;}
+    .header-nav.active .close-icon{display: flex;justify-content: end;margin-bottom: 4rem;}
+
+    .banner{padding-top: 24px;}
+    .banner-content{width: 80%; margin-right: auto; margin-left: auto; text-align: center; }
+    .banner-title{color: var(--color-primary);font-family: var(--font-family-secondary);font-size: 80px;margin-bottom: 24px;font-weight: 400;}
+    .banner-subtitle{font-family: var(--font-family-accent);font-size: 16px;margin-bottom: 24px;letter-spacing: 3px;font-weight: 400}
+    .banner-description{font-size: 15px;line-height: 1.4;}
+    .banner-subtitle,.banner-description{color: var(--color-secondary);}
+    .banner-btn{padding: 55px 28px;border-radius: 50%;background-color: var(--color-primary);color: var(--color-accent);font-family: var(--font-family-secondary);font-weight: 400;font-size: 18px;}
+    .banner-cta{display: flex; justify-content: center;margin-top: 80px;}
+
+    @media(min-width: 768px){
+         body{background-image: url(assets/home/background-home-tablet.jpg);}
+         .header{padding: unset;}
+         .header-nav{width: 70%;}
+         .hamburger-menu{display: none;}
+         .hn-items{display: flex;column-gap: 48px;padding: 39px 0;justify-content: center;align-items: center;}
+         .hn-item{margin-bottom: unset;}
+         .banner{padding-top: 100px;padding-bottom: 100px;}
+         .banner-cta{margin-top: 66px;}
+         .banner-content{width: 70%;}
+         .banner-title{font-size: 114px;}
+         .banner-subtitle{font-size: 28px;letter-spacing: 4px;}
+         .banner-description{font-size: 18px;}
+         .banner-btn{padding: 75px 30px;font-size: 32px;}
+    }
+    @media(min-width: 992px){
+        body{background-image: url(assets/home/background-home-desktop.jpg);}
+        .header{padding-top: 40px;padding-left: 64px;}
+        .header-logoimg{width: 50%;}
+        .header-logo{display: none;}
+        .header-logo--des{display: block;}
+        .header-nav{width: 50%;}
+        .banner{padding-top: 180px;padding-bottom: 60px;}
+        .banner-contencta{display: flex; align-items: center; justify-content: space-between;}
+        .banner-content{width: 46%;margin: unset;text-align: left;}
+    }
+    
+  </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-logoimg">
+    <img src="assets/logo-mob.png" class="header-logo" alt="space-logo-mobile">
+    <img src="assets/logo.png" class="header-logo--des" alt="space-logo">
+    </div>
+    <div class="header-nav" id="navbar">
+        <a href="#" onclick="showMenu()" class="hamburger-menu"><img src="assets/menu.png" alt="Hamburger - Icon"></a>
+        <a href="#" onclick="showMenu()" class="close-icon"><img src="assets/close.png" alt="Close Icon"></a>
+        <ul class="hn-items">
+            <li><a href="#" class="hn-item">00 Home</a></li>
+            <li><a href="#" class="hn-item">01 Destination</a></li>
+            <li><a href="#" class="hn-item">03 Crew</a></li>
+            <li><a href="#" class="hn-item">04 Technology</a></li>
+        </ul>
+    </div>
+</header>
+<section class="banner">
+    <div class="container">
+    <div class="banner-contencta">
+        <div class="banner-content">
+            <h6 class="banner-subtitle">SO, YOU WANT TO TRAVEL TO</h6>
+            <h1 class="banner-title">SPACE</h1>
+            <p class="banner-description">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+        </div>
+        <div class="banner-cta">
+            <a href="#" class="banner-btn">EXPLORE</a>
+        </div>
+    </div>
+    </div>
+</section>
+<script>
+    function showMenu(){
+        let menu = document.getElementById("navbar");
+        menu.classList.toggle("active");
+    }
+</script>
+</body>
+</html>
